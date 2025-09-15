@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Bundle JS (jsDelivr CDN) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Заказ товара со склада</title>
+</head>
+<body>
+<form class="container mt-4 p-4 bg-light rounded">
+    <!-- ФИО заказчика -->
+    <div class="mb-3">
+        <label for="customerName" class="form-label">ФИО заказчика</label>
+        <input type="text" class="form-control" id="customerName" required>
+    </div>
+
+    <!-- Номер телефона -->
+    <div class="mb-3">
+        <label for="customerPhone" class="form-label">Номер телефона заказчика</label>
+        <input type="tel" class="form-control" id="customerPhone" required>
+    </div>
+
+    <!-- Компания склада-->
+    <div class="mb-3">
+        <label for="warehouseCompany" class="form-label">Компания склада</label>
+        <select class="form-select" id="warehouseCompany">
+            <option selected>Выберите компанию...</option>
+            <option value="CompInfo">CompInfo</option>
+            <option value="FabricsDetails">Fabrics&Details</option>
+            <option value="X5Group">X5Group</option>
+        </select>
+    </div>
+
+    <!-- Артикул товара -->
+    <div class="mb-3">
+        <label for="productArticle" class="form-label">Артикул товара</label>
+        <input type="text" class="form-control" id="productArticle" required>
+    </div>
+
+    <!-- Количество -->
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Количество</label>
+        <input type="number" class="form-control" id="quantity" min="1" required>
+    </div>
+
+    <!-- Дата доставки -->
+    <div class="mb-3">
+        <label for="deliveryDate" class="form-label">Дата доставки</label>
+        <input type="date" class="form-control" id="deliveryDate" required>
+    </div>
+
+    <!-- Время доставки -->
+    <div class="mb-3">
+        <label for="deliveryTime" class="form-label">Время доставки</label>
+        <input type="time" class="form-control" id="deliveryTime" required>
+    </div>
+
+    <!-- Примечания (чекбоксы) -->
+    <div class="mb-3">
+        <label class="form-label">Примечания</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="urgent">
+            <label class="form-check-label" for="urgent">Срочно</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="callback">
+            <label class="form-check-label" for="callback">Перезвонить для уточнения</label>
+        </div>
+    </div>
+
+    <!-- Способ получения (радиокнопки) -->
+    <div class="mb-3">
+        <label class="form-label">Способ получения</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="deliveryMethod" id="pickup" value="pickup" checked>
+            <label class="form-check-label" for="pickup">Самовывоз</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="deliveryMethod" id="delivery" value="delivery">
+            <label class="form-check-label" for="delivery">Доставка транспортной компанией склада</label>
+        </div>
+    </div>
+
+    <!-- Кнопка отправки -->
+    <button type="submit" class="btn btn-primary">Отправить заказ</button>
+</form>
+</body>
+</html>
